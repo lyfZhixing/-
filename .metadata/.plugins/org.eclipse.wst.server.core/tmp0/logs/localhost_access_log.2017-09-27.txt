@@ -1,0 +1,9 @@
+127.0.0.1 - - [27/Sep/2017:10:12:01 +0800] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [27/Sep/2017:10:12:12 +0800] "GET /meeting/ HTTP/1.1" 404 1010
+0:0:0:0:0:0:0:1 - - [27/Sep/2017:10:12:13 +0800] "GET /favicon.ico HTTP/1.1" 404 1016
+127.0.0.1 - - [27/Sep/2017:10:22:56 +0800] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [27/Sep/2017:10:23:01 +0800] "GET /meeting/jsp/login.jsp HTTP/1.1" 200 4020
+0:0:0:0:0:0:0:1 - - [27/Sep/2017:10:23:16 +0800] "POST /meeting/LoginServlet HTTP/1.1" 200 33
+0:0:0:0:0:0:0:1 - - [27/Sep/2017:10:23:16 +0800] "GET /meeting/NotificationsServlet HTTP/1.1" 200 6351
+0:0:0:0:0:0:0:1 - - [27/Sep/2017:10:23:16 +0800] "GET /meeting/js/notifications.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [27/Sep/2017:10:23:17 +0800] "POST /meeting/NotificationsServletTwo HTTP/1.1" 200 288
