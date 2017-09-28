@@ -114,7 +114,7 @@ public class EmployeeDaoImplement extends JDBCTemplate implements EmployeeDao {
 	@Override
 	public Employee login(String uname, String upwd) throws SQLException {
 		Employee emp = null;
-		String sql = "SELECT employeeid,status,role FROM employee WHERE username=? AND password=?";
+		String sql = "SELECT employeeid,status,role FROM employee WHERE username=? AND password=? AND status=1";
 		ResultSet rs = null;
 		Object[] params = {uname,upwd};
 		try {

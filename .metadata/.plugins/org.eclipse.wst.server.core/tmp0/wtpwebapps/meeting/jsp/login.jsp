@@ -24,7 +24,12 @@ $(function(){
 			   data: {"uname":uname,"upwd":upwd},
 			   dataType: "json",
 			   success: function(data){
-				   location.href="<%=basePath%>"+data;
+				   if(data){
+					   location.href="<%=basePath%>NotificationsServlet"; 
+				   }else{
+					   alert("登录失败");
+				   }
+				  
 			   }
 			});
 	});

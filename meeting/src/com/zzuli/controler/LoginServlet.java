@@ -60,12 +60,12 @@ public class LoginServlet extends HttpServlet {
 				request.getSession().setAttribute("session_status",emp.getStatus() );
 				request.getSession().setAttribute("session_role",emp.getRole() );
 				request.getSession().setAttribute("employeeid_session", employeeid);
-				json = JSON.toJSONString("NotificationsServlet");
+				json = JSON.toJSONString(true);
 				out.print(json);
 				out.flush();
 				out.close();
 			}else{
-				json = JSON.toJSONString("jsp/login.jsp?msg='登录失败'");
+				json = JSON.toJSONString(false);
 				out.print(json);
 				out.flush();
 				out.close();
