@@ -48,6 +48,10 @@
 					<td><input type="text" id="phone" maxlength="20" /><span id="phonemsg"></span></td>
 				</tr>
 				<tr>
+					<td>短信验证码：</td>
+					<td><input type="text" id="vcode" maxlength="20" /><span id="vcodemsg"></span></td>
+				</tr>
+				<tr>
 					<td>电子邮件：</td>
 					<td><input type="text" id="email" maxlength="20" /><span id="emailmsg"></span></td>
 				</tr>

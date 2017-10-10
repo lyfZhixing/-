@@ -43,6 +43,8 @@ function inputcfm(){
 		var flag3 = false;
 		var flag4 = false;
 		var flag5 = false;
+		var flag6 = false;
+		var vcode = "";
 		 $("#password").blur(function(){
 			 flag1 =inputpwd();
 		 });
@@ -56,16 +58,40 @@ function inputcfm(){
 		 $("#email").blur(function(){	
 			 flag4 = checkEmail();
 		});
-		 $("#phone").blur(function(){	
+		 $("#phone").blur(function(){
+			 var phone = $("#phone").val();
 			 flag5 = checknum();
+			 if(flag5==true){
+				 $.ajax({
+					 type: "GET",
+					   url: "SmsServlet",
+					   data: {"phone":phone},
+					   dataType:"json",
+					   success: function(msg){
+						   //alert(msg);
+						   if(msg == false){
+							   flag5 == false;
+						   }else{
+							   vcode = msg;
+							   flag5 == true;
+						   }
+						   
+					   }
+				});
+			 }
 		});
-		 
+		 //验证码验证
+		 $("#vcode").blur(function(){	
+			 var vcode1 = $("#vcode").val();
+			 if(vcode == vcode1){
+				 flag6 = true;
+				 $("#vcodemsg").html("验证码输入正确");
+			 }else{
+				 flag6 = false;
+				 $("#vcodemsg").html("验证码输入错误");
+			 }
+		});
 		$("#register").click(function(){
-			/*alert("1"+flag1);
-			alert("2"+flag2);
-			alert("3"+flag3);
-			alert("4"+flag4);
-			alert("5"+flag5);*/
 			var employeename = $("#employeename").val();
 			var accountname = $("#accountname").val();
 			var password = $("#password").val();
@@ -77,8 +103,8 @@ function inputcfm(){
 			if(employeename != "" && accountname != ""
 					&& password != "" && confirm != ""
 					&& phone != "" && email != "" && deptid != ""
-					&& flag1==true && flag2==true 
-					 && flag4==true && flag5==true){
+					&& flag1 && flag2 
+					 && flag4 && flag5 && flag6){
 				$.ajax({
 					   type: "POST",
 					   url: "RegisterServlet",
