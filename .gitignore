@@ -26,3 +26,8 @@ hs_err_pid*
 /RemoteSystemsTempFiles/
 /Servers/
 /meeting/.metadata/
+/meeting/.settings/
+/meeting/build/
+/meeting/WebContent/build/
+
+
