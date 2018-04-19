@@ -29,5 +29,6 @@ hs_err_pid*
 /meeting/.settings/
 /meeting/build/
 /meeting/WebContent/build/
+/meeting/.*
 
 
